@@ -1,19 +1,22 @@
 <?php
 
 require_once"header.php";
+require_once"connection.php";
+
+$sql="SELECT * FROM products";
+$result=mysqli_query($conn,$sql);
+
 
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-</head>
-<body>
     <h1>Welcome to homepage.</h1>
+    <h1>Prodcut List Here.</h1>
+<?php foreach($result as $product){ ?>
+<h1><?php echo $product['title'] ?></h1>
+<img src="images/<?php echo $product['image']?>" width="200px" height="200px">
+<a href="">View Product</a>
+<?php } ?>
+<?php
 
-</body>
-</html>
+require_once"footer.php";
+?>

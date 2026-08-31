@@ -15,16 +15,17 @@ session_start();
 
 <body>
 
-    <a href="users.php">Users</a>
-    <a href="products.php">Products</a>
-    <a href="category.php">Category</a>
+    <a href="users.php" class="btn btn-primary btn-sm>Users</a>
+    <a href="products.php" class="btn btn-primary btn-sm>Products</a>
+    <a href="category.php" class="btn btn-primary btn-sm>Category</a>
 
     <?php if (isset($_SESSION['auth'])) { ?>
         <a href="#">
             Welcome: <?php echo $_SESSION['auth']['name']; ?>
         </a>
-        <a href="logout.php">Logout</a>
+        <a href="logout.php" >Logout</a>
         <a href="add-category.php">Add Category</a>
+        <a href="add-product.php">Add Product</a>
 
 
     <?php } else { ?>
