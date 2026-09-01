@@ -1,5 +1,5 @@
 <?php
-require_once "header.php";
+require_once"header.php";
 require_once "connection.php";
 
 // Redirect if the user is not logged in
@@ -30,11 +30,11 @@ if(!empty($_POST)){
 $query = "SELECT * FROM category";
 $data = mysqli_query($conn, $query);
 ?>
-
+<div class="container">
 <form action="" method="post">
-    Category Name: <input type="text" name="name" required>
+    Category Name: <input type="text" class="form-control" name="name" required>
     <br><br>
-    <button type="submit">Add Category</button>
+    <button type="submit"  class="btn btn-success" style="width:100%">Add Category</button>
 </form>
 
 <ul>
@@ -42,5 +42,5 @@ $data = mysqli_query($conn, $query);
     <li><?php echo $category['name']; ?></li>
 <?php } ?>
 </ul>
-
+</div>
 <?php require_once 'footer.php'; ?>

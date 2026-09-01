@@ -25,8 +25,9 @@ if (!move_uploaded_file($tmp_name, "images/" . $image)) {
     $sql="INSERT INTO products (category_id,user_id,title,slug,quantity,price ,image ,description) VALUES ('$category_id','$userId','$title','$slug','$quantity','$price' ,'$image' ,'$description') ";
     $result=mysqli_query($conn,$sql);
     if($result){
+        <div class="notification">
         $_SESSION['success']="Product added successfully";
-        header("Location:add-product.php");
+        header("Location:index.php");
     }else{
         $_SESSION['error']="Product not added ";
         header("Location: add-product.php");

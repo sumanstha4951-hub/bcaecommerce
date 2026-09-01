@@ -8,14 +8,19 @@ $result=mysqli_query($conn,$sql);
 
 
 ?>
-
-    <h1>Welcome to homepage.</h1>
+<div class="container">
     <h1>Prodcut List Here.</h1>
+    <div class="card">
 <?php foreach($result as $product){ ?>
-<h1><?php echo $product['title'] ?></h1>
-<img src="images/<?php echo $product['image']?>" width="200px" height="200px">
+<div class="product">
+<img src="images/<?php echo $product['image']?>" width="180" height="200px"><hr>
+<h3><?php echo $product['title'] ?></h3>
 <a href="">View Product</a>
+</div>
 <?php } ?>
+</div>
+</div>
+
 <?php
 
 require_once"footer.php";
